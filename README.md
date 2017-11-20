@@ -156,3 +156,24 @@
 ```
 Текст программы помещается в файлы: main7.c
 
+## Состав пул-запроса:
+
+- task1.h
+- task1.c
+- main1.c
+- main2.c
+- task3.h
+- task3.c
+- main3.c
+- task4.h
+- task4.c
+- main4.c
+- task5.h
+- task5.c
+- main5.c
+- task6.h
+- task6.c
+- main6.c
+- main7.c
+
+
