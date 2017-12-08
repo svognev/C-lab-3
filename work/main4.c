@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include "task4.h"
-#define N 512
+#define N 1024
 
 int main()
 {

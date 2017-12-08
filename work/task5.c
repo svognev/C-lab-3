@@ -22,7 +22,7 @@ int getSumInt(int arr[], int N)
 		}
 	}
 
-	for (k = i; k <= j; k++)
+	for (k = i+1; k < j; k++)
 	{
 		result = result + arr[k];
 	}

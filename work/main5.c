@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "task5.h"
-#define N 512
+#define N 51
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
 			arr[i] = rand() % 10 + 1;
 			break;
 		case 1:
-			arr[i] = (rand() % 10 + 1) - (rand() % 10 + 1);
+			arr[i] = 0 - (rand() % 10 + 1);
 			break;
 		}
 	}
