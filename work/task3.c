@@ -1,4 +1,4 @@
-#include "tasK3.h"
+#include "task3.h"
 #define OUT 0//if inside of the word
 #define IN 1//if outside of the word
 #include<stdio.h>
