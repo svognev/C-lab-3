@@ -1,7 +1,7 @@
 #define IN 0
 #define OUT 1
  #include "task4.h"
- #include<stdlib.h>
+ #include<stdio.h>
 #include<string.h>
 int getSum(char buf[])
  {
