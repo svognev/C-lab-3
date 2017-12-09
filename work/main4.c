@@ -1,7 +1,7 @@
 #include "task4.h"
  #include<stdio.h>
  #include<stdlib.h>
-#include<string>
+#include<string.h>
  int main()
  {
 	char buf[SIZE] = { ' ' };
