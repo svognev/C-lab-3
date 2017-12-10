@@ -16,18 +16,19 @@ int getSum(char buf[])
 			result = 0;
 			result = result * 10 + (buf[i] - '0');
 			i++;
+			count++;
 			for (;(buf[i] >= '0' && (buf[i] <= '9') && digit == IN);)// the compilation digit
 				 {
 				result = result * 10 + (buf[i] - '0');
-				
-					if (limit < count++)
+				count++;
+					if (limit < count)
 					 digit = OUT;
 							//count++;
 					i++;
 				}
 			digit = OUT;
 			count = 0;
-			sum += result;// summa of all digit
+			sum += result;// summa of all digits
 			}
 		i++;
 			}

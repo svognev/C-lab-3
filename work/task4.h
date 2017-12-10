@@ -1,3 +1,3 @@
 #define SIZE 100
-#define LIMIT 6// limit bit
+#define LIMIT 8// limit bit
 int getSum(char buf[]);
