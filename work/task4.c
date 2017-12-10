@@ -21,9 +21,11 @@ int getSum(char buf[])
 				 {
 				result = result * 10 + (buf[i] - '0');
 				count++;
-					if (limit < count)
-					 digit = OUT;
-							//count++;
+				if (limit < count)
+				{
+					digit = OUT;
+					i--;
+				}		//count++;
 					i++;
 				}
 			digit = OUT;
