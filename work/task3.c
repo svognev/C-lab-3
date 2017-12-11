@@ -11,7 +11,8 @@ int getMaxWord(char buf[], char word[])
 	int countSymbol = 0;
 	short int flag = OUT;
 	int size = strlen(buf);
-	buf[size - 1] = '\0';
+	if (buf[size - 1]=='\n')
+		buf[size-1] = '\0';
 	while (buf[i])
 	{
 		if (buf[i] != ' ')

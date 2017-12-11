@@ -4,7 +4,7 @@
 
 int main()
 {
-	char arr[SIZE];
+	char arr[SIZE] = { 0 };
 	char word[SIZE] = { 0 };
 	printf("Enter a string:\n");
 	fgets(arr, SIZE, stdin);
