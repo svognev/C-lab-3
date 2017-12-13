@@ -10,17 +10,17 @@ int getSumInt(int arr[],int N)
 	while (arr[i++] > 0);//lookout the first negative number
 	while (arr[N--] < 0);//lookout the last positive number
 
-/*	while (j<i)//1part.  it's need for imaging solutions
+	while (j<i)//1part.  it's need for imaging solutions
 	{
 		printf(" %i",summ);
 		j++;
-	}*/
-	i--;// the found number is not taken into account
-	while (i++ < N)
+	}
+	//i--;// the found number is not taken into account
+	while (i <=N)
 			{
 				summ += arr[i];
-				//printf(" %i", arr[i]);//2 part. it's need for imaging solutions
+				printf(" %i", arr[i++]);//2 part. it's need for imaging solutions
 			}
-
+	puts(" // it's number for summ", stdout);
 	return summ;
 }
