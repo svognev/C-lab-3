@@ -10,14 +10,12 @@
 int main()
 {
  	char str[N] = {0};
-	int len = 0;
-
+	
 	printf("Enter str: \n");
 	fgets(str, N, stdin);
-	len = strlen(str);
-	str[len - 1] = ' ';
-
+	
 	printf("Number of words - %d\n", wordCount(str));
 
 	return 0;
 }
+
