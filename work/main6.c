@@ -14,10 +14,10 @@ int main()
 		switch (rand() % 2)
 		{
 		case 0:
-			arr[i] = rand() % (1 - 9) + 1;
+			arr[i] = rand() % (1 + 9);
 			break;
 		case 1:
-			arr[i] = -(rand() % (1 - 9) + 1);
+			arr[i] = -(rand() % (1 + 9) );
 			break;
 		}
 	}

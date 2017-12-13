@@ -4,7 +4,7 @@
 
 int getSumMaxMin(int arr[], int N)
 {
-	int summ = 0, i ,max , min ,j=0,k=0;
+	int summ = 0, i ,max , min ,PositionMax=0,PositionMin=0, PositionLeft = 0, PositionRight = 0;
 	min=max = arr[0];
 		for (i=0;i < N;i++)
 	{
@@ -12,35 +12,33 @@ int getSumMaxMin(int arr[], int N)
 			if (max < arr[i])// lookout the largerest number
 			{
 				max = arr[i];
-				j = i;//number of array = max
+				PositionMax = i;//number of array = max
 			}
 			else if(min > arr[i])// lookout the smallerest number
 			{
 				min = arr[i];//number of array = min
-				k = i;
+				PositionMin = i;
 			}
 			
 	}
 		
-		i--;// the found number is not taken into account
 
-		if (k < j)
+		if (PositionMin < PositionMax)
 		{
-			j--;
-			while (k++ < j)
-			{
-				summ += arr[k];
-				//printf(" %ik", arr[k]);//2 part. it's need for imaging solutions
-			}
+			 PositionLeft = PositionMin;
+			 PositionRight =PositionMax;
 		}
 		else
+		{	
+			PositionLeft = PositionMax;
+			PositionRight = PositionMin;
+		}
+		PositionLeft++;
+		while (PositionLeft <PositionRight)
 		{
-			k--;
-			while (j++ < k)
-			{
-				summ += arr[j];
-				//printf(" %ij", arr[j]);//2 part. it's need for imaging solutions
-			}
+			summ += arr[PositionLeft];
+			printf(" %i", arr[PositionLeft]);//2 part. it's need for imaging solutions
+			PositionLeft++;
 		}
 
 	return summ;
