@@ -11,7 +11,9 @@ int wordCount(char str[])
 	int count = 0;
 	int i = 0, j = 0;
 	char word[N] = { 0 };
-	int len = 0;
+	int len = 0, len_str = 0;
+	len_str = strlen(str);
+	str[len_str - 1] = ' ';
 
 	while (str[i])
 	{
@@ -19,7 +21,7 @@ int wordCount(char str[])
 		{
 			inWord = 1;
 			len = 1;
-			word[j++] = str[i];
+		    word[j++] = str[i];
 		}
 		else if ((str[i] == ' ') && (inWord == 1))
 		{
