@@ -6,22 +6,20 @@
 
 int getSumInt(int arr[],int N)
 {
-	int summ = 0, i = 0;
-	
-	while (arr[i] > 0)//lookout the first furst negative number
+	int summ = 0, i = 0,j=0;
+	while (arr[i++] > 0);//lookout the first negative number
+	while (arr[N--] < 0);//lookout the last positive number
+
+/*	while (j<i)//1part.  it's need for imaging solutions
 	{
-		i++;
-	}
-			summ = arr[i];
-			i++;
-			while (arr[N-1] < 0)//first the last positive number
-			{
-				N--;
-			}
-			
-			for (;i < N;i++)
+		printf(" %i",summ);
+		j++;
+	}*/
+	i--;// the found number is not taken into account
+	while (i++ < N)
 			{
 				summ += arr[i];
+				//printf(" %i", arr[i]);//2 part. it's need for imaging solutions
 			}
 
 	return summ;

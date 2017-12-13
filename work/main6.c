@@ -5,7 +5,7 @@
 #include<stdlib.h>
 int main()
 {
-	int i ;
+	int i,len=0 ;
 	int arr[SIZE+1] = { 0 };
 	srand(time(0));
 	//n = N;
@@ -31,6 +31,8 @@ int main()
 		printf(" %i", arr[i]);
 		i++;
 	}
-	printf("\nSumma between the largest number and the smallerst number =%i\n", getSumMaxMin(arr,SIZE));
+	fputs("\n", stdout);
+	len = i - 1;
+	printf("\nSumma between the largest number and the smallerst number =%i\n", getSumMaxMin(arr,i));
 	return 0;
 }

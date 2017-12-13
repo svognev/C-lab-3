@@ -8,7 +8,6 @@ int main()
 	int i,sum=0;
 	int arr[SIZE+1] = { 0 };
 	srand(time(0));
-	//n = N;
 	for (i = 0;i <= SIZE;i++)
 	{
 		switch (rand() % 2)
@@ -28,10 +27,11 @@ int main()
 	i = 0;
 	while (i < SIZE)
 	{
-		printf(" %i",arr[i]);
-			i++;
+		printf(" %i",arr[i++]);
 	}
-	sum = getSumInt(arr, SIZE);
+	puts("\n");
+	int len = i - 1;
+	sum = getSumInt(arr, len);
 	printf("\nresult =%i\n",sum);
 	return 0;
 }
