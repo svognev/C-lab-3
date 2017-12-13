@@ -21,6 +21,6 @@ int getSumInt(int arr[],int N)
 				summ += arr[i];
 				printf(" %i", arr[i++]);//2 part. it's need for imaging solutions
 			}
-	puts(" // it's number for summ", stdout);
+	fputs(" // it's number for summ", stdout);
 	return summ;
 }
