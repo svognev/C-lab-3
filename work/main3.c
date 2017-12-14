@@ -17,7 +17,7 @@ int main()
 	len = strlen(buf);
 	buf[len - 1] = '\0 ';
 
-	printf("Max word: %s - %d  \n", &word, getMaxWord(buf, word));
+	printf("Max word: %s - %d  \n", word, getMaxWord(buf, word));
 
 	return 0;
 }
