@@ -9,8 +9,8 @@ int main()
 	char buf[BUF_SIZE + 1] = { '\0' };
 	printf("Enter your string: ");
 	fgets(buf, BUF_SIZE, stdin);
-	buf[BUF_SIZE - 1] = ' '; // remove '\0'
-	buf[strlen(buf) - 1] = ' '; // remove '\n'
+	buf[BUF_SIZE - 1] = '\0'; // remove '\0'
+	buf[strlen(buf) - 1] = '\0'; // remove '\n'
 	printf("Number of words = %d\n", wordCount(buf));
 	return 0;
 }
