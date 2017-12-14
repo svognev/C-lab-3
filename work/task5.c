@@ -13,14 +13,16 @@ int getSumInt(int buf[], int N)
 	{
 		if (buf[i] < 0)
 		{
-			n = i; break;
+			n = i; 
+			break;
 		}
 	}
-	for (j = N; j > i; j--)
+	for (j = N-1; j >= i; j--)
 	{
 		if (buf[j] >= 0)
 		{
-			p = j; break;
+			p = j; 
+			break;
 		}
 	}
 
