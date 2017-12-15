@@ -11,7 +11,7 @@ int main()
 
 	printf("Enter your string: ");
 	fgets(buf, BUF_SIZE, stdin);
-	buf[BUF_SIZE - 1] = '\0'; // remove '\0'
+	//buf[BUF_SIZE - 1] = '\0'; // remove '\0'
 	buf[strlen(buf) - 1] = '\0'; // remove '\n'
 
 	int maxLenWord = getMaxWord(buf, word);
