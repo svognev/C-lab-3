@@ -33,5 +33,6 @@ int getSumInt(int arr[],int N)
 		printf(" %i", arr[i]);//2 part. it's need for imaging solutions
 	}
 	printf("    max= %i\n", max);
+
 	return summ;
 }
