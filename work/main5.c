@@ -6,8 +6,9 @@
 int main()
 {
 	int i,sum=0;
-	int arr[SIZE+1] = { 0 };
+	int arr[SIZE + 1] = {0};
 	srand(time(0));
+	//arr = {1,-2,2,-4,-6,2,3};
 	for (i = 0;i <= SIZE;i++)
 	{
 		switch (rand() % 2)
