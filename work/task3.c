@@ -26,7 +26,7 @@ int getMaxWord(char buf[], char word[])
 		}
 		if (strlen(newBuf) > strlen(word))
 		{
-			for (k = 0; k < strlen(newBuf); k++)
+			for (k = 0; k <= strlen(newBuf); k++)
 			{
 				word[k] = newBuf[k];
 			}
