@@ -7,6 +7,7 @@ int main()
 {
 	int i,sum=0;
 	int arr[SIZE+1] = { 0 };
+	//int arr[] = { 1, -2, 3, -4, -6, 2 ,3 };
 	srand(time(0));
 	for (i = 0;i <= SIZE;i++)
 	{
@@ -25,7 +26,7 @@ int main()
 	
 	printf("random entered array of numbers :\n");
 	i = 0;
-	while (i < SIZE)
+	while (arr[i]!='\0')
 	{
 		printf(" %i",arr[i++]);
 	}
