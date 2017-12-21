@@ -6,9 +6,14 @@
 int main()
 {
 	int i,sum=0;
+<<<<<<< HEAD
 	int arr[SIZE+1] = { 0 };
 	//int arr[] = { 1, -2, 3, -4, -6, 2 ,3 };
+=======
+	int arr[SIZE + 1] = {0};
+>>>>>>> f29f345b697029718454e64bfe4856798129bf6b
 	srand(time(0));
+	//arr = {1,-2,2,-4,-6,2,3};
 	for (i = 0;i <= SIZE;i++)
 	{
 		switch (rand() % 2)
