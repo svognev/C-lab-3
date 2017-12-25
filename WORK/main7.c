@@ -1,74 +1,45 @@
 
 #include <stdio.h>
-#include<string.h>
-#include <stdlib.h>
-#include <time.h>
-#define SIZE 100
-#define N 26
+#include <string.h>
+#define SIZE 256
 
-
-int cmp(const void *a,const void *b){
-    return *(int*)a-*(int*)b;
-}
-
-
-int main() {
-    int i=0;
-    char buf[SIZE];
-    int count[N]={0};
+int main()
+{
+    int letter[SIZE];//for letters
+    int temp[SIZE];// for frequency
+    char str[SIZE]={0};
+    int i,j,k;
     
-    int max=0;
-
-    srand((unsigned int) time(NULL));
     
-    for(i=0;i<SIZE-1;i++)
-    buf[i]=rand()%('Z'-'A'+1)+'A';
-    buf[SIZE-1]='\0';
- //  puts(buf);
-    
-
-    i=0;
-  
-        while (buf[i] !='\0')
-        {
-            count[buf[i]-'A']++;
-            i++;
-        }
-    
-   for(i=0;i<N;i++)
-   {
-       if(count[i]>max)
-           max=count[i];
-       if(count[i]>0)
-            printf("%c-%d\n",i+'A',count[i]);
-   }
-    
-    printf("Max frequency: %d  %c\n",max,(char)i);
-       
-  
-  
-    for(i=0;i<N;i++)
-        
+    for (i=0; i<SIZE; i++)
     {
-       if(count[i]==max)
-     
-        printf("%c-%d\n",i+'A',count[i]);
-     }
-
-
- 
-  printf("Sorted:\n");
-
-    qsort(count,N,sizeof(int),cmp);
-   for(i=0;i<N;i++)
-   {
-       printf("%d\n", count[i]);
-       
+        letter[i]=i;
+        temp[i]=0;
     }
-
+    
+    printf("Enter a string of charackters: \n");
+    fgets(str, SIZE, stdin);
+    
+    for (i=0; i<strlen(str)-1; i++)
+    {
+        k=str[i];
+        temp[k]++;
+    }
+    for (i=0; i<SIZE; i++)
+        for (j=i+1; j<SIZE; j++)
+            if (temp[j] > temp[i])
+            {
+                k=temp[j];
+                temp[j]=temp[i];
+                temp[i]=k;
+                k=letter[j];
+                letter[j]=letter[i];
+                letter[i]=k;
+            }
+    for (i=0; i<SIZE; i++)
+        if(temp[i])
+            printf("%c - %d\n",letter[i],temp[i]);
     
     return 0;
-            
-        
-    
 }
+
