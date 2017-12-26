@@ -8,7 +8,7 @@ int getMaxWord(char buf[], char word[])
 {
 	int slovo, count = 0, len = 0;
 	int inWord = 0;
-	int i = 0, j = 0;
+	int i = 0, j = 0, k = 0;
 	int maxLen = 0;
 
 	while (buf[i])
@@ -24,11 +24,12 @@ int getMaxWord(char buf[], char word[])
 			{
 				maxLen = len;
 				int temp = len;
-				for (int k = 0; k < len; k++)
+				for (k = 0; k < len; k++)
 				{
 					word[k] = buf[i - temp];
 					temp--;
 				}
+				word[k+1] = '\0';
 			}
 			len = j = 0;
 		}
