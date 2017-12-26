@@ -1,10 +1,4 @@
-//
-//  task1.c
-//  lab3_1
-//
-//  Created by Ksenia on 12.12.2017.
-//  Copyright © 2017 Ksenia. All rights reserved.
-//
+
 #include <stdio.h>
 #include <string.h>
 #include "task1.h"
