@@ -8,14 +8,13 @@
 
 int main()
 {
-	int len = 0;
 	char buf[N] = { 0 };
 	char word[N] = { 0 };
 
 	printf("Enter line \n");
 	fgets(buf, N, stdin);
-	len = strlen(buf);
-	buf[len - 1] = '\0';
+	
+	buf[strlen(buf) - 1] = '\0';
 
 	printf("Max word: %s - %d  \n", word, getMaxWord(buf, word));
 
