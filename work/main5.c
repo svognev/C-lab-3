@@ -3,14 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "task5.h"
-#define N 20
+#define MAX 20
 
 int main()
 {
-	int buf[N] = { 0 };
+	int buf[MAX] = { 0 };
 	srand(time(0));
 	
-	for (int i = 0; i < N; i++)
+	for (int i = 0; i < MAX; i++)
 	{
 		if (rand() % 2 == 0)
 		{
@@ -23,6 +23,6 @@ int main()
 		printf("%0.2d ", buf[i]);
 	}
 	
-	printf("\nSumma chisel:%d\n", getSumInt(buf, N));
+	printf("\nSumma chisel:%d\n", getSumInt(buf, MAX));
 	return 0;
 }
