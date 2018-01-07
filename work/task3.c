@@ -15,7 +15,6 @@ int getMaxWord(char buf[],char word[])
     int count=0;
     int letters=0;
     int flag=OUT;
-   // int len=0;
     char maxWord[LEN]={'\0'};
     size_t len=strlen(word);
     
@@ -36,7 +35,7 @@ int getMaxWord(char buf[],char word[])
         else if (buf[i] !=' ' && flag==IN)
         {
            
-            letters++;
+           letters++;
             maxWord[count]=buf[i];
             count++;
         }
@@ -46,11 +45,16 @@ int getMaxWord(char buf[],char word[])
             count=0;
         
         }
+
         len=strlen(maxWord);
-        for(int x=0;x<len;x++)
-        {
-            word[x]=maxWord[x];
-        }
+
+		if (strlen(maxWord) > strlen(word))
+		{
+			for (int x = 0; x < len; x++)
+			{
+				word[x] = maxWord[x];
+			}
+		}
         
        
         
@@ -61,6 +65,6 @@ int getMaxWord(char buf[],char word[])
         i++;
     }
 
-     printf("lenght of max_word %s: %1ld\n",word,strlen(word));
-    return 0;
+    // printf("lenght of max_word %s: %1ld\n",word,strlen(word));
+    return strlen(word);
 }

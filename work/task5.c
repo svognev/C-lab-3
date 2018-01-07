@@ -37,7 +37,7 @@ int getSumInt(int arr[],const int N)
                 sum+=arr[i];
             }
  
-        printf("\nSum between first negative and last positive element: %d\n",sum);
-    return 0;
+      //  printf("\nSum between first negative and last positive element: %d\n",sum);
+    return sum;
 }
 

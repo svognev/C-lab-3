@@ -15,11 +15,12 @@
 
 
 
-int main(int argc, const char * argv[]) {
+int main() {
     char buf[SIZE];
     printf("Enter a line,please: \n");
     fgets(buf,SIZE,stdin);
-    
-    wordCount(buf);
+	buf[strlen(buf) - 1] = '\0';
+
+   printf("The line contains %d words\n", wordCount(buf));
     return 0;
 }

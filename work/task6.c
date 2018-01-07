@@ -58,12 +58,10 @@ int getSumMaxMin(int arr[],int N)
             sum+=arr[i];
     }
   
-        printf("\n%d\n",sum);
-    printf("\nSum between maximum %d (arr[%d]) and minimum %d (arr[%d]) elements is: %d\n",max,index_max,min,index_min,sum);
-    
-    
-   
+        
+
+	printf("\nSum between maximum %d (arr[%d]) and minimum %d (arr[%d]) elements is: %d\n", max, index_max, min, index_min, sum);
  
-       return 0;
+       return sum;
     
 }

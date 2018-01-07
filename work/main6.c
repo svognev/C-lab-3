@@ -36,10 +36,9 @@ int main(int argc, const char * argv[])
         }
         
     }
-    
-    
-   getSumMaxMin(arr,N);
-    
+	getSumMaxMin(arr, N);
+	//printf("\n%d\n", getSumMaxMin(arr,N));
+	
     return 0;
 }
 

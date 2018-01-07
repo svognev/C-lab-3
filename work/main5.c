@@ -39,7 +39,7 @@ int main(int argc, const char * argv[])
     }
     
     
-     getSumInt(arr,N);
+    printf("\nSum between first negative and last positive is: %d\n", getSumInt(arr,N));
     
     return 0;
 }

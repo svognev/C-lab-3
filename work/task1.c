@@ -18,7 +18,7 @@ int wordCount(char buf[]){
     int flag=OUT;
     int i=0;
     int count=0;
-    buf[strlen(buf)-1]='\0';
+    
     
     
     while(buf[i])
@@ -33,7 +33,7 @@ int wordCount(char buf[]){
         i++;
         
     }
-    printf("%d words\n",count);
-    return 0;
+  //  printf("%d words\n",count);
+    return count;
     
 }
