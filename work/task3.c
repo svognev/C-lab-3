@@ -40,5 +40,5 @@ int getMaxWord(char buf[], char word[])
 		i++;
 	}
 
-	return maxLen;
+	return strlen(word);
 }
