@@ -1,49 +1,50 @@
 /*Данная программа предназначена для анализа встречаемости символов в
-строке (в том числе пробелов, цифр и тд), за исключением служебных: '\n' и '\0'*/
+строке (в том числе пробелов, цифр и тд), за исключением служебных: '\n' и '\0'
+а так же вывода их в порядке убывания (от большего к меньшему)*/
 
 #include <stdio.h>
 #include <string.h>
+//#include <conio.h>
 #define SIZE 2048
 #define SIZE_ASCII 256
 
 //Вывод символов и их количества
 int printf_arr(char arr_char[], int arr_count[])
-{
-	for (int i = 0; arr_char[i] != 0; i++)
+{	
+	for (int i = strlen(arr_char) - 1; 0 <= i; i--)
 	{
-		printf("%c\t%d\n", arr_char[i], arr_count[i]);
+		printf("\"%c\": %d\n", arr_char[i], arr_count[i]);
 	}
 	return 0;
 }
-//--------------------------------------------------------
 
-
-//Сортировка массивов
-int InsertionSort(char * arr_char, int * arr_count, int size)
+/*http://vscode.ru/prog-lessons/sortirovka-shella.html */
+//Сортировка Шелла
+void ShellSort(int n, int mass_int[], char mass_char[])
 {
-	int tmp_int = 0;
-	char tmp_char = 0;
-
-	for (int i = 0; 0 < size - 1; i++)
-	{
-		for (int j = i + 1; j < size; ++j)
+	int i, j, step;
+	int tmp_i;
+	char tmp_c;
+	for (step = n / 2; step > 0; step /= 2)
+		for (i = step; i < n; i++)
 		{
-			if (arr_count[i] > arr_count[j])
+			tmp_i = mass_int[i];
+			tmp_c = mass_char[i];
+
+			for (j = i; j >= step; j -= step)
 			{
-				//перемещение элементов массива count
-				tmp_int = arr_count[j];
-				arr_count[j] = arr_count[i];
-				arr_count[i] = tmp_int;
-				//перемещение элементов массива count
-				tmp_char = arr_char[j];
-				arr_char[j] = arr_char[i];
-				arr_char[i] = tmp_char;
+				if (tmp_i < mass_int[j - step])
+				{
+					mass_int[j] = mass_int[j - step];
+					mass_char[j] = mass_char[j - step];
+				}
+				else
+					break;
 			}
-		}	
-	}
-	return 0;
+			mass_int[j] = tmp_i;
+			mass_char[j] = tmp_c;
+		}
 }
-//--------------------------------------------------------
 
 //Проверка наличия символа в массиве
 //Возвращает индекс элемента или -1 если он отсутствует
@@ -58,8 +59,6 @@ int poisk(char simvol, char arr[])
 	}
 	return -1;
 }
-//--------------------------------------------------------
-
 
 int main()
 {
@@ -94,8 +93,10 @@ int main()
 	}
 
 	//Сортируем массивы
-	InsertionSort(arr_char, arr_count, SIZE_ASCII);
+	ShellSort(strlen(arr_char), arr_count, arr_char);
+
 	//Вывод отсортированных массивов в консоль
-	printf_arr(arr_char, arr_count);	
+	printf_arr(arr_char, arr_count);
+	//_getch();
 	return 0;
 }
