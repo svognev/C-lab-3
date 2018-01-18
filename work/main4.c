@@ -4,28 +4,65 @@
 #define SIZE 512
 
 
-long long int Conv(char buf_int[], int ind_start, int ind_end)
-{
-	long long int number = 0;
-	for()
+//Преобразование строки в signed long long int
+signed long long int str_to_slli(char str[]) {
+	unsigned int strLen = 0;
+	unsigned int i = 0;
 
+	//while (str[i] != '\0') 
+	while ((str[i] >= 48 && str[i] <= 58) || ((str[i] == '-' || str[i] == '+') && i == 0))
+	{
+		strLen += 1;
+		i++;
+	}
 
-	return 0;
+	signed long long int num = 0;
+	long long int ten;
+	int signFlag = 1; //true: +, false: -
+
+	for (i = 0; i < strLen; i++) {
+		if (str[i] < '0' || str[i] > '9') 
+		{
+			if (i == 0 && str[i] == '-') 
+			{
+				signFlag = 0;
+				continue;
+			}
+			if (i == 0 && str[i] == '+') 
+			{
+				signFlag = 1;
+				continue;
+			}
+			return NULL;
+		}
+
+		ten = 1;
+		for (unsigned int j = 0; j < strLen - 1 - i; j++) {
+			ten *= 10;
+		}
+
+		num += ten * (str[i] - '0');
+	}
+
+	if (signFlag) 
+	{
+		return num;
+	}
+	else 
+	{
+		return -num;
+	}
 }
 
-int getSum(char buf[]) //нахождение суммы
+//нахождение суммы
+int getSum(char buf[])	
 {
-	int sum = 0; // Сумма элементов
-	int ind = 0; //Индекс элемента
-	long long int number = 0; //В данну юпеременную предполагается записывать числа полученные из массива
-
+	int sum = 0;	//Возращаемая сумма
 
 
 
 	return sum;
 }
-
-
 
 int main()
 {
@@ -33,7 +70,7 @@ int main()
 	printf("Enter a text string: ");
 	fgets(buf, SIZE, stdin);
 	buf[strlen(buf) - 1] = 0;
-	printf("sum = %d", getSum(buf));
+	printf("sum = %lli", str_to_slli(buf));
 
 
 
