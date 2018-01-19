@@ -29,7 +29,6 @@ int getMaxWord(char buf[], char word[])
 					word[k] = buf[i - temp];
 					temp--;
 				}
-				word[k+1] = '\0';
 			}
 			len = j = 0;
 		}
