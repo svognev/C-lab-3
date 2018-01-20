@@ -13,7 +13,7 @@ int main()
 
 	printf("Enter line \n");
 	fgets(buf, N, stdin);
-	
+	buf[strlen(buf) - 1] = '\0';
 	printf("Max word:%s-%d\n", word, getMaxWord(buf, word));
 
 	return 0;
