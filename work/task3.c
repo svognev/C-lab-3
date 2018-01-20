@@ -10,9 +10,7 @@ int getMaxWord(char buf[], char word[])
 	int i = 0, j = 0, k = 0;
 	char maxWord[N] = {'\0'};
 
-	buf[strlen(buf) - 1] = ' ';
-
-	while (buf[i])
+	while (i < strlen(buf))
 	{
 		if (buf[i] != ' ' && inWord == 0)
 		{
@@ -20,23 +18,22 @@ int getMaxWord(char buf[], char word[])
 			maxWord[j] = buf[i];
 			j++;
 		}
-		else if (buf[i] == ' ' && inWord == 1)
-		{
-			inWord = 0;
-			j = 0;
-		}
-
 		else if (buf[i] != ' ' && inWord == 1)
 		{
 			maxWord[j] = buf[i];
 			j++;
 		}
-		if (strlen(maxWord) > strlen(word))
-			{
-				for (k = 0; k <= strlen(maxWord); k++)
-				word[k] = maxWord[k];
-			}
+		else if ((buf[i] == ' ' || buf[i] == '\0') && inWord == 1)
+		{
+			inWord = 0;
+			j = 0;
+		}
 		
+		if (strlen(maxWord) > strlen(word))
+		{
+			for (k = 0; k < strlen(maxWord); k++)
+				word[k] = maxWord[k];
+		}
 		i++;
 	}
 	return strlen(word);
