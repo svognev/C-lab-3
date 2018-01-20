@@ -14,7 +14,7 @@ int main()
 	printf("Enter line \n");
 	fgets(buf, N, stdin);
 	
-	printf("Max word: %s - %d  \n", word, getMaxWord(buf, word));
+	printf("Max word:%s-%d\n", word, getMaxWord(buf, word));
 
 	return 0;
 }
