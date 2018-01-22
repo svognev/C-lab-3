@@ -1,8 +1,8 @@
 #include "task4.h"
 #include <stdio.h>
 #include <string.h>
-#include <conio.h>
-#define SIZE 512
+#include <stdlib.h>
+#include <stdio.h>
 
 int main()
 {
@@ -13,6 +13,5 @@ int main()
 	buf[strlen(buf) - 1] = 0;
 	suma = getSum(buf);
 	printf("sum = %d\n", suma);
-	_getch();
 	return 0;
 }
