@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define SIZE 512
 #define DIGIT 3
 //Максимальное количество разрядов числа
 
@@ -43,15 +42,19 @@ int getSum(char buf[])
 {
 	int count = 0;
 	int sum = 0;
-	char namber[DIGIT + 1] = { 0 };
+	char namber[DIGIT + 2] = { 0 };
 	separater(buf, DIGIT);
-	printf("%s\n", buf);
+	//printf("%s\n", buf);
 	//Нахождение начала числа
-	for (int i = 0; buf[i] != 0; i++)
+	for (int i = 0; (buf[i] != 0 && i <= strlen(buf) - 1); i++)
 	{
 		if ((buf[i] >= '0' && buf[i] <= '9') && (i == 0 || buf[i - 1] <'0' || buf[i - 1] >'9' || buf[i - 1] == '-'))
 		{
-			for (int j = 0; ((buf[i] >= '0' && buf[i] <= '9') && (i == 0 || buf[i - 1] <'0' || buf[i - 1] >'9' || buf[i - 1] == '-')); i++, j++)
+			if (i != 0 && buf[i - 1] == '-')
+			{
+				namber[0] = '-';
+			}
+			for (int j = strlen(namber); (buf[i] >= '0' && buf[i] <= '9'); i++, j++)
 			{
 				namber[j] = buf[i];
 			}
@@ -61,7 +64,7 @@ int getSum(char buf[])
 				//Очистка буферного массива
 				for (int j = 0; namber[j] != '\0'; j++)
 				{
-					buf[j] = '\0';
+					namber[j] = '\0';
 				}
 			}
 		}
