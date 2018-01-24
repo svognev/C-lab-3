@@ -6,7 +6,7 @@
 
 int main()
 {
-	char buf[SIZE] = { 0 };
+	char buf[SIZE];
 	int count = 0;
 	int flag = OUT;
 	int i = 0;

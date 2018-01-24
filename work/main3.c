@@ -1,13 +1,15 @@
 #include "task3.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
 #define SIZE_STR 2048
 #define SIZE_WORD 86
 
 int main()
 {
-	char buf[SIZE_STR] = { 0 };
-	char word[SIZE_WORD] = { 0 };
+	char buf[SIZE_STR];
+	char word[SIZE_WORD];
 
 	printf("Enter a text string: ");
 	fgets(buf, SIZE_STR, stdin);

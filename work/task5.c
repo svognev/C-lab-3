@@ -1,9 +1,10 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 // Нахождение индекса первого отрицательного числа в массиве arr размера N
 int negative(int arr[], int N)
 {
-	for (int i = 0; i <= N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		if (arr[i] < 0)
 			return i;
@@ -24,8 +25,9 @@ int positive(int arr[], int N)
 int getSumInt(int arr[], int N)
 {
 	int sum = 0;
-
-	for (int i = negative(arr, N) + 1; i < positive(arr, N); i++)
+	int neg = negative(arr, N);
+	int pos = positive(arr, N);
+	for (int i = neg + 1; i < pos; i++)
 	{
 		sum = sum + arr[i];
 	}
@@ -35,7 +37,7 @@ int getSumInt(int arr[], int N)
 // Заполнение массива arr размером size случайными значениями от min до max
 int gen_arr(int arr[], int min, int max, int size)
 {
-	for (int i = 0; i <= size; i++)
+	for (int i = 0; i < size; i++)
 	{
 		arr[i] = rand() % (max - min + 1) + min;
 	}

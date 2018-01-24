@@ -3,10 +3,12 @@
 //Запись слова из buf начинающегося на в индексе ind в массив word
 void write(char buf[], char word[], int ind)
 {
-	for (int i = 0; buf[ind] != 0 && buf[ind] != ' ' && buf[ind] != '\n'; i++, ind++)
+	int i = 0;
+	for (; buf[ind] != 0 && buf[ind] != ' ' && buf[ind] != '\n'; i++, ind++)
 	{
 		word[i] = buf[ind];
 	}
+	word[i] = '\0';
 }
 
 //Считаем длинну слова в массиве buf начинающегося с индекса ind. 

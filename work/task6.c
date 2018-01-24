@@ -5,7 +5,7 @@ int max_el(int arr[], int N)
 {
 	int ind = 0;
 
-	for (int i = 0; i <= N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		if (arr[i] > arr[ind])
 			ind = i;
@@ -18,7 +18,7 @@ int min_el(int arr[], int N)
 {
 	int ind = 0;
 
-	for (int i = 0; i <= N; i++)
+	for (int i = 0; i < N; i++)
 	{
 		if (arr[i] < arr[ind])
 			ind = i;
@@ -51,12 +51,3 @@ int getSumMaxMin(int arr[], int N)
 
 }
 
-// Заполнение массива arr размером size случайными значениями от min до max
-int gen_arr(int arr[], int min, int max, int size)
-{
-	for (int i = 0; i <= size; i++)
-	{
-		arr[i] = rand() % (max - min + 1) + min;
-	}
-	return 0;
-}

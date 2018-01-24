@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include <string.h>
-//#include <conio.h>
 #define SIZE 2048
 #define SIZE_ASCII 256
 
@@ -62,7 +61,7 @@ int poisk(char simvol, char arr[])
 
 int main()
 {
-	char buf[SIZE] = { 0 };	//Строка вводимая пользователем
+	char buf[SIZE];	//Строка вводимая пользователем
 	char arr_char[SIZE_ASCII] = { 0 };	//Массив символов
 	int arr_count[SIZE_ASCII] = { 0 };	//Массив количества символов
 
@@ -91,12 +90,9 @@ int main()
 			}
 		}
 	}
-
 	//Сортируем массивы
 	ShellSort(strlen(arr_char), arr_count, arr_char);
-
 	//Вывод отсортированных массивов в консоль
 	printf_arr(arr_char, arr_count);
-	//_getch();
 	return 0;
 }
