@@ -7,7 +7,10 @@ int main()
 	char word[SIZE];
 	printf("Enter a line, please:\n");
 	fgets(buf, SIZE, stdin);
-	buf[strlen(buf) - 1] = ' ';
+	if (buf[strlen(buf) - 1] == '\n')
+		buf[strlen(buf) - 1] = ' ';
+	else
+		buf[strlen(buf)] = ' ';
 	printf("Max word: %s - %d\n", word, getMaxWord(buf, word));
 	
 	return 0;

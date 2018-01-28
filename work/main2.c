@@ -7,12 +7,36 @@ int main()
 {
 	int i = 0, j = 0, len = 0;
 	int inWord = OUT; 
+	int count = 0;
 	char buf[SIZE];
 	char word[SIZE];
 	printf("Enter a line, please:\n");
 	fgets(buf, SIZE, stdin);
-	buf[strlen(buf) - 1] = ' ';
+	if (buf[strlen(buf) - 1] == '\n')
+		buf[strlen(buf) - 1] = ' ';
+	else
+		buf[strlen(buf)] = ' ';
 
+	while (buf[i])
+	{
+		if (buf[i] != ' '&& inWord == OUT)
+		{
+			inWord = IN;
+		}
+		else if (buf[i] == ' '&& inWord == IN)
+		{
+			inWord = OUT;
+			count++;
+		}
+		else if (buf[i] == '\0'&& inWord == IN)
+		{
+			inWord = OUT;
+			count++;
+		}
+		i++;
+	}
+	printf("You have %d words\n", count);
+	i = 0;
 	while (buf[i])
 	{
 		if (buf[i] != ' '&& inWord == OUT)
