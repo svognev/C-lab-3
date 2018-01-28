@@ -12,59 +12,64 @@ int getMaxWord(char buf[],char word[])
 {
     
     int i=0;
-    int count=0;
-    int letters=0;
+    int count=0;//number of chars in one word
+    int maxCount=0;
     int flag=OUT;
     char maxWord[LEN]={'\0'};
-    size_t len=strlen(word);
+    char *p=NULL;
+    p=buf;
+    char *p_max=NULL;
     
-
+    
     
     
     while(buf[i])
     {
         if(buf[i] !=' '&& flag==OUT)
         {
-         
+            
             flag=IN;
-           
+            p=(buf+i);
             maxWord[count]=buf[i];
-            letters++;
             count++;
         }
         else if (buf[i] !=' ' && flag==IN)
         {
-           
-           letters++;
+
             maxWord[count]=buf[i];
             count++;
         }
         else if ((buf[i]==' '||buf[i]=='\0')&& flag ==IN)
         {
             flag=OUT;
+            if(count>maxCount)
+            {
+                maxCount=count;
+                p_max=p;
+                
+            }
             count=0;
-        
+            
         }
-
-        len=strlen(maxWord);
-
-		if (strlen(maxWord) > strlen(word))
-		{
-			for (int x = 0; x < len; x++)
-			{
-				word[x] = maxWord[x];
-			}
-		}
-        
-       
-        
-        
-        if(buf[i]=='\0')
-            break;
-        
         i++;
+   
     }
+    
+    if((flag=IN) && (count>maxCount))
+    {
+        maxCount=count;
+        p_max=p;
+    }
+        
+    
+            for (i = 0; i < maxCount; i++)
+            {
+                word[i] = *(p_max+i);
+            }
+    
+    word[i]='\0';
+    
+   
 
-    // printf("lenght of max_word %s: %1ld\n",word,strlen(word));
-    return strlen(word);
+    return maxCount;
 }
