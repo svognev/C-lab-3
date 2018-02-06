@@ -32,7 +32,7 @@ int getSumMaxMin(int arr[], int N)
 	int min = min_el(arr, N);
 	int max = max_el(arr, N);
 	
-	if(arr[min] < arr[max])
+	if (min < max)
 	{ 	
 		for (int i = min + 1; i < max; i++)
 		{
@@ -40,14 +40,13 @@ int getSumMaxMin(int arr[], int N)
 		}
 		return sum;
 	}
-	else
+	else if (max > min)
 	{
-		for (int i = max + 1; i < min; i++)
+		for (int i = max - 1; i > min; i--)
 		{
 			sum = sum + arr[i];
 		}
 		return sum;
 	}
-
 }
 

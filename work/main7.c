@@ -3,6 +3,7 @@
 а так же вывода их в порядке убывания (от большего к меньшему)*/
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #define SIZE 2048
 #define SIZE_ASCII 256

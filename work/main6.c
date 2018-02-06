@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "task6.h"
-#define SIZE 10
+#define SIZE 15
 #define MIN -9
 #define MAX 9
 
@@ -10,7 +10,19 @@ int gen_arr(int arr[], int min, int max, int size)
 {
 	for (int i = 0; i < size; i++)
 	{
-		arr[i] = rand() % (max - min + 1) + min;
+		switch (rand() % 2)
+		{
+		case 0:
+		{
+			arr[i] = rand() % 10;
+			break;
+		}
+		case 1:
+		{
+			arr[i] = (rand() % 10) * (-1);
+			break;
+		}
+		}
 	}
 	return 0;
 }
