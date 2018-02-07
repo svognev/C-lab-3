@@ -55,7 +55,7 @@ int getSumMaxMin(int arr[], int N)
 	}
 	else
 	{
-		return NULL;
+		return 0;
 	}
 
 }
