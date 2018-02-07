@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 
 //«апись слова из buf начинающегос€ на в индексе ind в массив word
@@ -33,14 +31,11 @@ int getMaxWord(char buf[], char word[])
 	int len_word = 0;	//ƒлинна слова в массиве word
 	int len_nw = 0;	//ƒлинна слова в анализируемом массиве
 
-	if(buf[strlen(buf) - 1] == '\n')
-	{
-		buf[strlen(buf) - 1] = 0;
-	}
+	buf[strlen(buf) - 1] = 0;
 
 	while (1)
 	{
-		if ((buf[i] != ' ') && (buf[i] != '\0'))
+		if ((buf[i] != ' ') && (buf[i] != 0))
 		{			
 			len_nw = count(buf, i); //вычисл€ем длинну слова в массиве buf
 
@@ -56,7 +51,7 @@ int getMaxWord(char buf[], char word[])
 
 		i++;
 
-		if ((buf[i] == '\0')||(buf[i] == '\n'))
+		if ((buf[i] == 0)||(buf[i] == '\n'))
 		{
 			return len_word;
 		}
