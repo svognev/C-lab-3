@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "task6.h"
-#define SIZE 20
+#define SIZE 10
 #define MIN -9
 #define MAX 9
 

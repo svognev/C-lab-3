@@ -8,7 +8,7 @@ int max_el(int arr[], int N)
 
 	for (int i = 0; i < N; i++)
 	{
-		if (arr[i] >= arr[ind])
+		if (arr[i] > arr[ind])
 		{
 			ind = i;
 		}
@@ -37,7 +37,7 @@ int getSumMaxMin(int arr[], int N)
 	int min = min_el(arr, N);
 	int max = max_el(arr, N);
 	
-	if(min < max)
+	if((min < max) && (max - 1 != min))
 	{ 	
 		for (int i = min + 1; i < max; i++)
 		{
@@ -45,7 +45,7 @@ int getSumMaxMin(int arr[], int N)
 		}
 		return sum;
 	}
-	else if (min > max)
+	else if ((min > max) && (min + 1 != max))
 	{
 		for (int i = max + 1; i < min; i++)
 		{
