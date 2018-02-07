@@ -30,8 +30,12 @@ int getMaxWord(char buf[], char word[])
 	int i = 0;
 	int len_word = 0;	//Длинна слова в массиве word
 	int len_nw = 0;	//Длинна слова в анализируемом массиве
-
-	buf[strlen(buf) - 1] = 0;
+	int len = strlen(buf);
+	if (buf[len - 1] == '\n')
+	{
+		buf[len - 1] = '\0';
+		len = strlen(buf);
+	}
 
 	while (1)
 	{
@@ -51,7 +55,7 @@ int getMaxWord(char buf[], char word[])
 
 		i++;
 
-		if ((buf[i] == 0)||(buf[i] == '\n'))
+		if ((buf[i] == '\0')||(buf[i] == '\n'))
 		{
 			return len_word;
 		}

@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 
 // Нахождение максимального числа в массиве arr размера N
 int max_el(int arr[], int N)
@@ -7,8 +8,10 @@ int max_el(int arr[], int N)
 
 	for (int i = 0; i < N; i++)
 	{
-		if (arr[i] > arr[ind])
+		if (arr[i] >= arr[ind])
+		{
 			ind = i;
+		}
 	}
 	return ind;
 }
@@ -21,7 +24,9 @@ int min_el(int arr[], int N)
 	for (int i = 0; i < N; i++)
 	{
 		if (arr[i] < arr[ind])
+		{
 			ind = i;
+		}
 	}
 	return ind;
 }
@@ -32,7 +37,7 @@ int getSumMaxMin(int arr[], int N)
 	int min = min_el(arr, N);
 	int max = max_el(arr, N);
 	
-	if(arr[min] < arr[max])
+	if(min < max)
 	{ 	
 		for (int i = min + 1; i < max; i++)
 		{
@@ -40,13 +45,17 @@ int getSumMaxMin(int arr[], int N)
 		}
 		return sum;
 	}
-	else
+	else if (min > max)
 	{
 		for (int i = max + 1; i < min; i++)
 		{
 			sum = sum + arr[i];
 		}
 		return sum;
+	}
+	else
+	{
+		return NULL;
 	}
 
 }
