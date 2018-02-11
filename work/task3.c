@@ -31,11 +31,14 @@ int getMaxWord(char buf[], char word[])
 		else if (buf[i] == ' ' && flag == IN)
 		{
 			flag = OUT; //vishli iz slova
-			if (dlina > max)
+			if (dlina >= max)
 			{
 				max = dlina;
 				for (c = 0; c < j; c++)
+				{
 					word[c] = slovo[c];
+					word[c + 1] = '\0';
+				}
 			}
 			j = 0;
 			dlina = 0;

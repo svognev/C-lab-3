@@ -17,7 +17,7 @@ int getSumInt(int arr[], int N)
 			break;
 		}
 	}
-	for (max = N; max > 0; max--)
+	for (max = N-1; max >= 0; max--)
 	{
 		if (arr[max] > 0)
 		{
@@ -29,12 +29,12 @@ int getSumInt(int arr[], int N)
 	if (i < j)
 	{
 		for (i++; i < j; i++)
-			sum = sum + arr[i];
+			sum += arr[i];
 	}
 	else
 	{
 		for (j++; j < i; j++)
-			sum = sum + arr[j];
+			sum += arr[j];
 	}
 	return sum;
 }

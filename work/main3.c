@@ -6,12 +6,11 @@
 int main()
 {
 	char buf[512] = { 0 };
-	char word[512] = { 0 };
+	char word[512];
 
 	printf("Enter a line, please:\n");
 	fgets(buf, 512, stdin);
 	buf[strlen(buf) - 1] = ' '; //ydalenie \n
-
 	putchar ('\n');
 	printf("samoe dlinnoe slovo: %s Dlina: %d\n", &word, getMaxWord(buf,word));
 	return 0;

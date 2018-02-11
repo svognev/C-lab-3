@@ -31,12 +31,12 @@ int getSumMaxMin(int arr[], int N)
 	if (i < j)
 	{
 		for (i++;i < j; i++)
-			sum = sum + arr[i];
+			sum += arr[i];
 	}
 	else
 	{
 		for (j++;j < i; j++)
-			sum = sum + arr[j];
+			sum += arr[j];
 	}
 	return sum;
 }
