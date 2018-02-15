@@ -1,4 +1,5 @@
 #include <string.h>
+#include <ctype.h>
 #define IN 1
 #define OUT 0
 
@@ -15,7 +16,7 @@ int getMaxWord(char buf[], char word[])
 	while (buf[i])
 	{
 
-		if (buf[i] != ' '  && flag == OUT)
+		if ( !isspace(buf[i])  && flag == OUT)
 		{
 			dlina++;
 			slovo[j] = buf[i];
@@ -23,13 +24,13 @@ int getMaxWord(char buf[], char word[])
 			flag = IN; //voshli v slovo
 			
 		}
-		else if (buf[i] != ' ' && flag == IN)
+		else if (!isspace(buf[i]) && flag == IN)
 		{
 			dlina++;
 			slovo[j] = buf[i]; // vnutri slova
 			j++;
 		}
-		else if (buf[i] == ' ' && flag == IN)
+		else if (isspace(buf[i]) && flag == IN)
 		{
 			flag = OUT; //vishli iz slova
 			if (dlina >= max)
