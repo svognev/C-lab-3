@@ -13,10 +13,6 @@ int getMaxWord(char buf[], char word[])
 	int dlina = 0;
 	char slovo[512] = { 0 };
 
-
-	if (buf[strlen(buf) - 1] == '\n')
-		buf[strlen(buf) - 1] = ' '; //ydalenie \n
-
 	while (buf[i])
 	{
 
@@ -34,7 +30,8 @@ int getMaxWord(char buf[], char word[])
 			slovo[j] = buf[i]; // vnutri slova
 			j++;
 		}
-		else if (isspace(buf[i]) && flag == IN)
+		
+		if ((isspace(buf[i]) || buf[i + 1] == 0) && flag == IN)
 		{
 			flag = OUT; //vishli iz slova
 			if (dlina >= max)
