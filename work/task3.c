@@ -13,10 +13,14 @@ int getMaxWord(char buf[], char word[])
 	int dlina = 0;
 	char slovo[512] = { 0 };
 
+
+	if (buf[strlen(buf) - 1] == '\n')
+		buf[strlen(buf) - 1] = ' '; //ydalenie \n
+
 	while (buf[i])
 	{
 
-		if ( !isspace(buf[i])  && flag == OUT)
+		if (!isspace(buf[i])  && flag == OUT)
 		{
 			dlina++;
 			slovo[j] = buf[i];
