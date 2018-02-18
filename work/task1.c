@@ -19,5 +19,7 @@ int wordCount(char buf[])
 		}
 		i++;
 	}
+	if (buf[i] == '\0'&& inWord == IN)
+		count++;
 	return count;
 }

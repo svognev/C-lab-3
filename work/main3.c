@@ -8,7 +8,7 @@ int main()
 	printf("Enter a line, please:\n");
 	fgets(buf, SIZE, stdin);
 	if (buf[strlen(buf) - 1] == '\n')
-		buf[strlen(buf) - 1] = ' ';
+		buf[strlen(buf) - 1] = '\0';
 	else
 		buf[strlen(buf)] = ' ';
 	printf("Max word: %s - %d\n", word, getMaxWord(buf, word));
