@@ -1,26 +1,32 @@
-#include <stdlib.h>
 #include <stdio.h>
-int getSum(char buf[])// нахождение суммы
+#include "task4.h"
+#define IN 1
+#define OUT 0
+
+int getSum(char buf[])
 {
-	int sum = 0, i = 0, n = 0, len = 0;
-		
+	int i = 0, count = 0, value = 0, sum = 0;
+	int flag = OUT;
 	while (buf[i])
 	{
-		if (buf[i] >= '0' && buf[i] <= '9')
+		if (buf[i] >= '0'&& buf[i] <= '9')
 		{
-			n = n * 10 + (buf[i] - '0'); // перевод строки в число
-			len++;
+			value = value * 10 + (buf[i] - '0');
+			flag = IN;
+			count++;
+			if (count == 5)
+			{
+				sum = sum + value;
+				value = 0;
+				count = 0;
+			}
 		}
-		if (len == 3)// ddd - ограничитель разрядов
+		else if (flag == IN)
 		{
-			sum += n;
-			n = len = 0;
-		}
-
-		if (len < 3 && (buf[i+1] >= 'A' && buf[i+1] <= 'z')||(buf[i + 1] == '\0' || buf[i + 1]=='\n'))
-		{
-			sum = sum + n;
-			n = 0;
+			sum = sum + value;
+			value = 0;
+			count = 0;
+			flag = OUT;
 		}
 		i++;
 	}
